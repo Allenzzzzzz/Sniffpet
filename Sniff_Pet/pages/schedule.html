@@ -1,0 +1,96 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>index</title>
+        <link rel="icon" type="image/png" sizes="160x158" href="../Sniff_Pet/img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="icon" type="image/png" sizes="160x158" href="../Sniff_Pet/img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="icon" type="image/png" sizes="160x158" href="../Sniff_Pet/img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="icon" type="image/png" sizes="160x158" href="../Sniff_Pet/img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="icon" type="image/png" sizes="160x158" href="../Sniff_Pet/img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="stylesheet" href="../Sniff_Pet/bootstrap/css/bootstrap.min.css?h=20a50d81007709feeb7e368ebc941f52">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="height: 103;">
+            <div class="container"><a class="navbar-brand" href="index.html" style="color: white;width: 98; margin-left:-70px; margin-top: 10px; font-size:30px;">SniffPet</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav ml-auto text-uppercase">
+                        <li class="nav-item" role="presentation"></li>
+                        <li class="nav-item" role="presentation"></li>
+                        <li class="nav-item" role="presentation"></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="record.html">Records</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="Schedule.html">Appointment</a></li>
+                        <div class="dropdown">
+                            <button class="dropbtn" style="text-transform:uppercase; margin-top: -.5px;">Account</button>
+                            <div class="dropdown-content">
+                              <a href="#">Profile</a>
+                              <a href="#about">About</a>
+                              <a href="#">Log out</a>
+                            </div>
+                          </div>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="indexForm" style="width: 2000px; height: 620px; position: absolute; top: 15.5%; left: 2px; background-color: rgb(33,37,41);">
+            <div style="padding: 5px; margin-top: 30px;">
+                <div class="alert alert-success" style="width: 29%; background-color: skyblue;">
+                    <div class="alert alert-info" style="background-color: #31296a; color: white;"><strong>Request Appointment...</strong></div>
+                    <form autocomplete="off" action="client_req_appointment_extension.php" method="POST"">
+                        <input type="hidden" name="client" value="<?php echo $client; ?>">
+                        <label>Request Date</label>
+                        <input type="date" id="date" name="date" placeholder="Enter Requested Date" class="form-control" required="required"><br>
+                        <label>Pet Name</label>
+                        <select name="pname" class="form-control" required="required">
+                            <option value="">Pet Name</option>
+
+                        </select><br>
+                        <label>Services</label>
+                        <select class="form-control" required="required" name="service">
+
+
+                        </select><br>
+                        <label>Person In-Charge</label>
+                        <select name="inCharge" class="form-control" required="required">
+                            <option value="">Select Pet Owner</option>
+
+                        </select><br>
+
+                        <label>Pet Owners <Address></Address></label>
+                        <input type="text" id="Address" name="Address" placeholder="Enter Address" class="form-control" required="required"><br>
+
+                        </select><br>
+
+                        <input type="submit" name="btnProceed" class="btn btn-primary form-control" value="Proceed" style="background-color: #31296a;">
+                    </form>
+                </div>
+                <div style="padding: 5px; margin-top: -27px; position: absolute; top: 9.3%; left: 30%;">
+                <div class="alert alert-success" style="width: 870px; height: 530px; background-color: skyblue;">
+                    <div class="alert alert-info" style="background-color: #31296a; color: white;"><strong>List of Appointment Schedule for Monday to Sunday</strong></div>
+                    <label class="form-control">9:00am - 10:00am</label>
+                    <label class="form-control">10:00am - 11:00am</label>
+                    <label class="form-control">11:00am - 12:00nn</label>
+                    <label class="form-control">1:00pm - 2:00pm</label>
+                    <label class="form-control">2:00am - 3:00pm</label>
+                    <label class="form-control">3:00am - 4:00pm</label>
+                </div>
+            </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="../Sniff_Pet/js/script.min.js?h=14fbe564ae668621587e502e401599ff"></script>
+    </body>
+
+    </html>

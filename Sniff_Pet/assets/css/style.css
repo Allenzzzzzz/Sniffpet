@@ -1,0 +1,19 @@
+
+.form-username{
+  display: inline;
+  margin-left: -500px;
+  color:gray;
+  align-content: center;
+
+}
+
+.form-password
+{
+  margin-left: 50px;
+  color:gray;
+  align-content: center;
+}
+
+ul{
+  text-style-type:none;
+}

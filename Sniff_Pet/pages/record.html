@@ -1,0 +1,119 @@
+
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>index</title>
+        <link rel="icon" type="image/png" sizes="160x158" href="../Sniff_Pet/img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="icon" type="image/png" sizes="160x158" href="../Sniff_Pet/img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="icon" type="image/png" sizes="160x158" href="../Sniff_Pet/img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="icon" type="image/png" sizes="160x158" href="../img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="icon" type="image/png" sizes="160x158" href="../img/Logo.png?h=6cd99456450a4b239082cc9459386ec3">
+        <link rel="stylesheet" href="../Sniff_Pet/bootstrap/css/bootstrap.min.css?h=20a50d81007709feeb7e368ebc941f52">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="height: 103;">
+            <div class="container"><a class="navbar-brand" href="index.html" style="color: white;width: 98; margin-left:-70px; margin-top: 10px; font-size:30px;">SniffPet</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav ml-auto text-uppercase">
+                        <li class="nav-item" role="presentation"></li>
+                        <li class="nav-item" role="presentation"></li>
+                        <li class="nav-item" role="presentation"></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="record.html">Records</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="Schedule.html">Appointment</a></li>
+                        <div class="dropdown">
+                            <button class="dropbtn" style="text-transform:uppercase; margin-top: -.5px;">Account</button>
+                            <div class="dropdown-content">
+                              <a href="#">Profile</a>
+                              <a href="#about">About</a>
+                              <a href="#">Log out</a>
+                            </div>
+                          </div>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="indexForm" style="width: 1500px; height: 620px; position: absolute; top: 17.5%; left: 0px; background-color: #71dada;">
+            <div class="alert alert-info"><strong><marquee>SniffPet</marquee></strong></div>
+            <div style="padding: 5px; margin-top: 30px; margin-left: 50px;">
+                <div class="alert alert-success" style="width: 29%;">
+                    <form action="reg_pet.php" method="POST" autocomplete="off" enctype="multipart/form-data">
+                        <label style="color: black;">Choose Image</label>
+                        <input type="file" name="image" class="form-control" required="required" style="height: max-content;">
+                        <label style="color: black;">Pet Name</label>
+                        <input type="text" name="pname" class="form-control" placeholder="Enter Pet Name" required="required">
+                        <label style="color: black;">Pet Type</label>
+                        <input type="text" name="ptype" class="form-control" placeholder="Enter Pet Type" required="required">
+                        <label style="color: black;">Pet Breed</label>
+                        <input type="text" name="pbreed" class="form-control" placeholder="Enter Pet Breed" required="required">
+                        <label style="color: black;">Gender</label>
+                        <select class="form-control" required="required" name="gender">
+                            <option value=""></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <label style="color: black;">Pet Birthday</label>
+                        <input type="date" name="age" class="form-control" placeholder="Enter Birthday" required="required"><br>
+                        <input type="hidden" name="oname" class="form-control" value="<?php echo $row['client_name']; ?>" required="required">
+                        <input type="hidden" name="oadd" class="form-control" value="<?php echo $row['address']; ?>">
+                        <input type="submit" name="btnRegPet" class="btn btn-primary" value="Register Pet" style="background-color: #31296a; width: 375px;"><br>
+                    </form>
+                </div>
+            </div>
+            <div style="padding: 5px; margin-top: 30px; position: absolute; top: 9.3%; margin-left: 500px;">
+                <div class="alert alert-success" style="width: 770px; height: 505px;">
+                    <div class="alert alert-info" style="color: black;"><strong>List of Owned Pet:</strong></div>
+                    <table class="table table-bordered table-hover table-condensed" id="myTable">
+                        <thead>
+                            <tr class="info">
+                                <th><p align="center">ID</p></th>
+                                <th><p align="center">Pet Name</p></th>
+                                <th><p align="center">Pet Type</p></th>
+                                <th><p align="center">Pet Breed</p></th>
+                                <th><p align="center">Pet Age</p></th>
+                                <th><p align="center">Action</p></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr>
+                                        <td align="center" style="padding-top: 14px; color: #000; font-weight: bold"><?php echo $row['pet_id']; ?></td>
+                                        <td align="center" style="padding-top: 14px; color: #000; font-weight: bold"><?php echo $row['pet_name']; ?></td>
+                                        <td align="center" style="padding-top: 14px; color: #000; font-weight: bold"><?php echo $row['pet_type']; ?></td>
+                                        <td align="center" style="padding-top: 14px; color: #000; font-weight: bold"><?php echo $row['breed']; ?></td>
+                                        <td align="center" style="padding-top: 14px; color: #000; font-weight: bold"><?php echo $row['age']; ?></td>
+                                        <td align="center">
+                                            <a href="delete_pet.php?id=<?php echo $row['pet_id']; ?>" class="btn btn-danger" style="background-color: #31296a;">Delete</a>
+                                        </td>
+                                    </tr>
+
+                        </tbody>
+                        <tr class="info">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="..Sniff_Pet/js/script.min.js?h=14fbe564ae668621587e502e401599ff"></script>
+    </body>
+
+    </html>
